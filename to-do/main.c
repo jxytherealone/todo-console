@@ -6,7 +6,7 @@ char x[100];
 
 void newTodo() {
 	printf("Enter the list: ");
-	scanf("%s", &x);
+	scanf("%99s", x);
 	printf("added new todo = %s", x);
 }
 
@@ -15,14 +15,13 @@ void deleteTodo() {
 }
 
 void todoDisplay() {
-	printf("\nAll Todo Lists:\n");
-    for (int i = 0; i < 100; i++) {
-        if (x[i] == '\0') { 
-            break;
-        } else {
-        	printf("%s \n",&x[i]);
-        }
+    printf("\nAll Todo Lists:\n");
 
+    char* token = strtok(x, " ");  // Assuming space as the delimiter
+
+    while (token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, " ");
     }
 }
 
