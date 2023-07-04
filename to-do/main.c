@@ -19,8 +19,10 @@ void todoDisplay() {
     for (int i = 0; i < 100; i++) {
         if (x[i] == '\0') { 
             break;
+        } else {
+        	printf("%s \n",&x[i]);
         }
-        printf("%s \n",&x[i]);
+
     }
 }
 
